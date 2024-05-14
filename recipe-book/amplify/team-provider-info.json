@@ -16,5 +16,23 @@
         "recipebook7d1b8533": {}
       }
     }
+  },
+  "devv": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-recipebook-devv-72df6-authRole",
+      "UnauthRoleArn": "arn:aws:iam::795838781436:role/amplify-recipebook-devv-72df6-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::795838781436:role/amplify-recipebook-devv-72df6-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-recipebook-devv-72df6-deployment",
+      "UnauthRoleName": "amplify-recipebook-devv-72df6-unauthRole",
+      "StackName": "amplify-recipebook-devv-72df6",
+      "StackId": "arn:aws:cloudformation:us-east-1:795838781436:stack/amplify-recipebook-devv-72df6/5625d210-1244-11ef-8a22-0affe3676973",
+      "AmplifyAppId": "d4zlm69e2e443"
+    },
+    "categories": {
+      "auth": {
+        "recipebook7d1b8533": {}
+      }
+    }
   }
 }
