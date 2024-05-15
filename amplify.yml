@@ -3,7 +3,7 @@ frontend:
   phases:
     preBuild:
       commands:
-        - amplify pull --appId $AWS_APP_ID --envName $AWS_ENV_NAME --yes
+        - amplifyPush --simple
         - npm i
     build:
       commands:
