@@ -3,7 +3,7 @@ frontend:
   phases:
     preBuild:
       commands:
-        - chmod 644 package-lock.json
+        - amplify push --simple
         - npm i
     build:
       commands:
