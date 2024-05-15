@@ -3,7 +3,7 @@ frontend:
   phases:
     preBuild:
       commands:
-        - rm -f package-lock.json
+        - chmod 644 package-lock.json
         - npm i
     build:
       commands:
