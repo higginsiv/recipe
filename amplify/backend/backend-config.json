@@ -1,4 +1,24 @@
 {
+  "api": {
+    "recipebook": {
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [],
+          "defaultAuthentication": {
+            "apiKeyConfig": {
+              "apiKeyExpirationDate": "2025-05-15T01:27:20.346Z",
+              "apiKeyExpirationDays": 364,
+              "description": ""
+            },
+            "authenticationType": "API_KEY"
+          }
+        }
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync"
+    }
+  },
   "auth": {
     "recipebook7d1b8533": {
       "customAuth": false,

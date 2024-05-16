@@ -32,6 +32,9 @@
     "categories": {
       "auth": {
         "recipebook7d1b8533": {}
+      },
+      "api": {
+        "recipebook": {}
       }
     }
   }
