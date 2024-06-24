@@ -11,6 +11,7 @@ type Recipe @model @auth(rules: [{allow: public}]) {
   RecipeSteps: [RecipeStep] @hasMany(indexName: "byRecipe", fields: ["id"])
   Ingredients: [Ingredient] @hasMany(indexName: "byRecipe", fields: ["id"])
   user: String
+  description: String
 }
 
 type Ingredient @model @auth(rules: [{allow: public}]) {

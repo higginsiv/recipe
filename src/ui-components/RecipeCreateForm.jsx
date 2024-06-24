@@ -25,18 +25,24 @@ export default function RecipeCreateForm(props) {
   const initialValues = {
     name: "",
     user: "",
+    description: "",
   };
   const [name, setName] = React.useState(initialValues.name);
   const [user, setUser] = React.useState(initialValues.user);
+  const [description, setDescription] = React.useState(
+    initialValues.description
+  );
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     setName(initialValues.name);
     setUser(initialValues.user);
+    setDescription(initialValues.description);
     setErrors({});
   };
   const validations = {
     name: [{ type: "Required" }],
     user: [],
+    description: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -66,6 +72,7 @@ export default function RecipeCreateForm(props) {
         let modelFields = {
           name,
           user,
+          description,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -130,6 +137,7 @@ export default function RecipeCreateForm(props) {
             const modelFields = {
               name: value,
               user,
+              description,
             };
             const result = onChange(modelFields);
             value = result?.name ?? value;
@@ -155,6 +163,7 @@ export default function RecipeCreateForm(props) {
             const modelFields = {
               name,
               user: value,
+              description,
             };
             const result = onChange(modelFields);
             value = result?.user ?? value;
@@ -168,6 +177,32 @@ export default function RecipeCreateForm(props) {
         errorMessage={errors.user?.errorMessage}
         hasError={errors.user?.hasError}
         {...getOverrideProps(overrides, "user")}
+      ></TextField>
+      <TextField
+        label="Description"
+        isRequired={false}
+        isReadOnly={false}
+        value={description}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              name,
+              user,
+              description: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.description ?? value;
+          }
+          if (errors.description?.hasError) {
+            runValidationTasks("description", value);
+          }
+          setDescription(value);
+        }}
+        onBlur={() => runValidationTasks("description", description)}
+        errorMessage={errors.description?.errorMessage}
+        hasError={errors.description?.hasError}
+        {...getOverrideProps(overrides, "description")}
       ></TextField>
       <Flex
         justifyContent="space-between"

@@ -24,16 +24,19 @@ export declare type ValidationFunction<T> = (value: T, validationResponse: Valid
 export declare type RecipeUpdateFormInputValues = {
     name?: string;
     user?: string;
+    description?: string;
 };
 export declare type RecipeUpdateFormValidationValues = {
     name?: ValidationFunction<string>;
     user?: ValidationFunction<string>;
+    description?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type RecipeUpdateFormOverridesProps = {
     RecipeUpdateFormGrid?: PrimitiveOverrideProps<GridProps>;
     name?: PrimitiveOverrideProps<TextFieldProps>;
     user?: PrimitiveOverrideProps<TextFieldProps>;
+    description?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type RecipeUpdateFormProps = React.PropsWithChildren<{
     overrides?: RecipeUpdateFormOverridesProps | undefined | null;
